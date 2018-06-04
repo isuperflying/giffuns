@@ -1,0 +1,35 @@
+<!--pages/gifmake/gifmake.wxml-->
+<scroll-view>
+  <view class='gif-show'>
+    <image class='gif-img' src='{{gifImgUrl}}' mode='widthFix'></image>
+    <view class='bottom-user'>
+      <label class='user-remark'>素材由用户：{{nickname}} 上传</label>
+    </view>
+  </view>
+  <view class='content-show'>
+    <view class='sens-view' wx:for='{{senslist}}' wx:key='id' wx:item='{{item}}'>
+        <text>第 {{index+1}} 句</text>
+        <input type='text' placeholder='{{item}}' data-i="{{index}}" bindinput='inputChange' placeholder-style='place-show' maxlength='{{maxlength}}'></input>
+    </view>
+  </view>
+  <view class='create-view'>
+    <button class='create-water-btn' bindtap='watermark' hover-class='create-water-hover'>一键生成</button>
+    <button class='create-btn' bindtap='nowater'  hover-class='create-hover'>去水印生成</button>
+  </view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">分享给好友</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <text class='show-text'>快来把「GIF在线制作」分享给好友去除水印吧！</text>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <button class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</button>
+    <button class="btn-confirm" open-type="share">确定</button>
+  </view>
+</view>
+
+</scroll-view>

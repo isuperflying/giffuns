@@ -1,0 +1,9 @@
+<!--pages/gifresult/gifresult.wxml-->
+<view class='gif-result'>
+  <image class='gif-url' src='{{gifurl}}' bindtap='showImg' mode='widthFix'></image>
+</view>
+<view class='bottom_fun'>
+    <button class='share-btn' hover-class='share-hover' open-type='share'>分享转发</button>
+    <button class='save-btn' hover-class='save-hover' bindtap='downimage'>保存本地</button>
+    <button class='more-btn' hover-class='more-hover' bindtap='tohome'>查看更多素材</button>
+</view>

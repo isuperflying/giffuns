@@ -1,0 +1,60 @@
+/* pages/gifshow/gifshow.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-show {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 40%;
+  justify-content: center;
+}
+
+.gif-url {
+  width: 320px;
+  height:182px;
+}
+
+.show_tip {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  
+  overflow: hidden;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.show-content{
+  display: flex;
+  justify-content: center;
+}
+.show-content-end{
+  display: flex;
+  justify-content: flex-end;
+}
+.touch-image{
+  width: 106rpx;
+  height: 133rpx;
+  margin-top: 60%;
+}
+.hint-text{
+  width: 416rpx;
+  height: 45rpx;
+  margin-top: 15%;
+}
+.hint-config{
+  width: 260rpx;
+  height: 100rpx;
+  margin-top: 5%;
+}

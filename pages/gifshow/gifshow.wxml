@@ -1,0 +1,10 @@
+<!--pages/gifshow/gifshow.wxml-->
+<view class='gif-show'>
+  <image class='gif-url' src='{{gifurl}}' bindtap='showImg' mode='widthFix'></image>
+</view>
+
+<view class="show_tip" data-statu="close" bindtap='showconfig'>
+    <view class='show-content'><image src='../images/touch_icon.png' class='touch-image'></image></view>
+    <view class='show-content'><image src='../images/hint_text.png' class='hint-text'></image></view>
+    <view class='show-content'><image src='../images/hint_config.png' class='hint-config'></image></view>
+</view>
