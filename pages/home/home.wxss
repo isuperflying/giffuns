@@ -23,7 +23,7 @@ page{
 .type{
   background: #fff;
   width: 96%;
-  height: 36px;
+  height: 40px;
   display: flex;
   margin-left: 2%;
   margin-right: 2%;
@@ -34,17 +34,29 @@ page{
 }
 
 .type-item{
-  width: 12%;
+  width: 16%;
   margin-left: 10rpx;
 }
 
 .type-normal{
-  font-size: 16px;
+  font-size: 13pt;
+  border-radius: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #eee
 }
 
 .type-selected{
-  font-size: 16px;
+  font-size: 13pt;
   color: #fd5f51;
+  border-radius: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #eee
 }
 
 .content {
