@@ -15,9 +15,10 @@
   </view>
 </view>
 <view class='gif-list'>
-  <view class='gif-item' wx:for='{{giflist}}' wx:key='id' wx:for-item="item" bindtap='createDetail' data-id='{{item.id}}'>
-      <image class='gif-img' src='{{item.preview_image}}' mode='aspectFill'></image>
-      <text class='gif-title'>{{item.name}}</text>
+  <view class='gif-item' wx:for='{{giflist}}' wx:key='id' wx:for-item="item" bindtap='createDetail' data-index='{{index}}'>
+      <image class='gif-img' src='{{item.template_img_url}}' mode='aspectFill'></image>
+      <text class='gif-title'>{{item.template_title}}</text>
+      <view class='gif-title-bg'></view>
   </view>
 </view>
 <view class='load_more'>

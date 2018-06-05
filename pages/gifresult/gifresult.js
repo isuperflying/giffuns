@@ -39,9 +39,9 @@ Page({
     downUrl = options.gifpath;
     titlename = options.name;
 
-    if (downUrl.indexOf('https') == -1) {
-      downUrl = downUrl.replace('http', 'https');
-    }
+    // if (downUrl.indexOf('https') == -1) {
+    //   downUrl = downUrl.replace('http', 'https');
+    // }
 
     wx.setNavigationBarTitle({
       title: titlename,

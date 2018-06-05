@@ -6,7 +6,7 @@ var page
 var pSize = 50
 var end = false
 var nodata = false
-
+var base_url = "http://192.168.80.97:8888/"
 Page({
   /**
    * 页面的初始数据
@@ -66,13 +66,14 @@ Page({
   getData: function () {
     var that = this;
     wx.request({
-      url: 'https://nz.qqtn.com/zbsq/index.php?m=api&c=make_gif&a=templist',
-      method: 'GET',
+      url: base_url + 'giflist',
+      method: 'POST',
       data: {
         'page': page,
         'page_size': pSize
       },
       success: function (res) {
+        
         wx.hideLoading();
         if(page == 1){
           list = res.data.data;
@@ -88,8 +89,14 @@ Page({
         
         if(list == null || list.length == 0){
           nodata = true;
+        }else{
+          list = JSON.parse(list);
+
+          list.forEach(obj => {
+            obj['template_img_url'] = base_url + obj['template_name'] + "/example.png"
+          })
         }
-        
+
         that.setData({
           giflist: list,
           is_end : end,
@@ -148,10 +155,14 @@ Page({
     }
   },
   createDetail:function(e){
-    var id = e.currentTarget.dataset.id;
-    console.log('id--->'+id);
+    let index = e.currentTarget.dataset.index;
+    
+    let tname = list[index]["template_name"]
+    let title = list[index]["template_title"]
+    let tcontent = list[index]["template_content"]
+    let maxinput = list[index]["maxlength"]
     wx.navigateTo({
-      url: '/pages/gifmake/gifmake?id='+id,
+      url: '/pages/gifmake/gifmake?tname=' + tname + "&title=" + title + "&tcontent=" + tcontent + "&maxinput=" + maxinput
     })
   },
   

@@ -14,7 +14,6 @@
   </view>
   <view class='create-view'>
     <button class='create-water-btn' bindtap='watermark' hover-class='create-water-hover'>一键生成</button>
-    <button class='create-btn' bindtap='nowater'  hover-class='create-hover'>去水印生成</button>
   </view>
 
 <!--弹窗-->
