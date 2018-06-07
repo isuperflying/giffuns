@@ -2,15 +2,15 @@
 
 page {
   width: 100%;
-  background: #f1f1f1;
+  background: #fff;
 }
 
 .swiper-top {
   height: 100px;
-  width: 96%;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 10rpx;
+  width: 93%;
+  margin-left: 4%;
+  margin-right: 3%;
+  margin-top: 12rpx;
   margin-bottom: 10rpx;
 }
 
@@ -67,12 +67,12 @@ page {
   overflow-x: hidden;
 }
 
-.gif-list {
+.gif-list { 
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 1%;
+  margin-left: 2%;
   margin-top: 2rpx;
 }
 
@@ -89,10 +89,6 @@ page {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 2px solid #fff;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 2px 2px 2px #bfbfbf;
   margin: 1%;
   justify-content: center;
   align-items: center;
@@ -113,20 +109,11 @@ page {
   margin: 4px;
   margin-left: 2%;
   margin-right: auto;
+  border-radius: 5px;
 }
 
 .gif-title {
   font-size: 10pt;
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  padding: 0 2%;
-  height: 28px;
-  line-height: 28px;
-  color: #fff;
-  text-align: center;
 }
 
 .gif-title-bg {
@@ -148,7 +135,6 @@ page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10rpx;
 }
 
 .is_end {
@@ -194,8 +180,8 @@ page {
 }
 
 .no-data image {
-  width: 150px;
-  height: 150px;
+  width: 372px;
+  height: 408px;
 }
 
 .no-data text {
@@ -203,4 +189,29 @@ page {
   margin-top: 20rpx;
   margin-left: -20rpx;
   color: #aaa;
+}
+
+.version-content{
+  width: 100%;
+  height: 86rpx;
+  margin-top: 10%;
+  border-top: 1px solid #eee;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.gif-style{
+  font-size: 12pt;
+  color: #3d3d3c;
+}
+
+.gif-version{
+  font-size: 10pt;
+  color: #333;
+  padding: 4px;
+  margin-left: 20%;
+  border-radius: 3px;
+  border: 1px solid #515151;
 }

@@ -1,6 +1,7 @@
 // pages/gifresult/gifresult.js
 var downUrl;
 var titlename;
+var show_tip = true;
 Page({
 
   /**
@@ -17,7 +18,7 @@ Page({
       console.log("button share--->")
     }
     return {
-      title: '快来在线制作你的' + titlename+'gif表情包吧！',
+      title: '快来制作你的专属GIF表情吧',
       path: '/pages/gifresult/gifresult?gifpath=' + downUrl + "&name=" + titlename,
       imageUrl: downUrl,
       success: function (res) {
@@ -74,7 +75,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var Page$this = this;
+    wx.getStorage({
+      key: 'show_tip',
+      success: function (res) {
+        show_tip = res.data;
+        console.log(show_tip);
+        Page$this.setData(
+          {
+            showModalStatus: show_tip
+          }
+        );
+      }
+    })
   },
 
   /**
@@ -118,29 +131,9 @@ Page({
 
     console.log("down img https--->" + downUrl);
 
-    var show_tip;
-    wx.getStorage({
-      key: 'show_tip',
-      success: function (res) {
-        show_tip = res.data;
-        console.log(show_tip);
-        //到提示用户保存页面
-        if(show_tip){
-          wx.navigateTo({
-            url: '../gifshow/gifshow?gifpath=' + downUrl,
-          })
-        }else{
-          wx.previewImage({
-            urls: [downUrl],
-            current: downUrl
-          })
-        }
-      },
-      fail:function(){
-        wx.navigateTo({
-          url: '../gifshow/gifshow?gifpath=' + downUrl,
-        })
-      }
+    wx.previewImage({
+      urls: [downUrl],
+      current: downUrl
     })
 
     // var Page$this = this;
@@ -210,5 +203,22 @@ Page({
     wx.navigateTo({
       url: '/pages/home/home',
     })
+  },
+  
+  powerShow: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    //显示  
+    if (currentStatu == "close") {
+      this.setData(
+        {
+          showModalStatus: false
+        }
+      );
+      wx.setStorage({
+        key: "show_tip",
+        data: false
+      })
+    }
   }
+
 })

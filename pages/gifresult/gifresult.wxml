@@ -3,7 +3,35 @@
   <image class='gif-url' src='{{gifurl}}' bindtap='showImg' mode='widthFix'></image>
 </view>
 <view class='bottom_fun'>
-    <button class='share-btn' hover-class='share-hover' open-type='share'>分享转发</button>
+  <!-- <button class='share-btn' hover-class='share-hover' open-type='share'>分享转发</button>
     <button class='save-btn' hover-class='save-hover' bindtap='downimage'>保存本地</button>
-    <button class='more-btn' hover-class='more-hover' bindtap='tohome'>查看更多素材</button>
+    <button class='more-btn' hover-class='more-hover' bindtap='tohome'>查看更多素材</button> -->
+  <view class='home-view' bindtap='downimage'>
+    <image src='../images/share_icon.png'></image>
+    <text>分享</text>
+  </view>
+  <view class='home-view' bindtap='downimage'>
+    <image src='../images/down_icon.png'></image>
+    <text>保存</text>
+  </view>
+  <view class='home-view' bindtap='tohome'>
+    <image src='../images/home_icon.png'></image>
+    <text>首页</text>
+  </view>
+</view>
+
+<view class="show_tip" data-statu="close" wx:if="{{showModalStatus}}" bindtap='powerShow'>
+  <view class='show-content'>
+    <image src='../images/touch_icon.png' class='touch-image'></image>
+  </view>
+  <view class='show-content'>
+    <image src='../images/yulan.png' class='yulan-image'></image>
+  </view>
+  <view class='show-content'>
+    <image src='../images/yulan_save.png' class='yulan-image-save'></image>
+  </view>
+  <view class='show-content'>
+    <image src='../images/yulan_config.png' bindtap='powerShow' class='yulan-image-config'></image>
+  </view>
+  <!-- <view class='show-content-end'><button class='ikonw' bindtap='powerShow'>知道了</button></view> -->
 </view>

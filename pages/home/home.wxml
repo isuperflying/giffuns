@@ -4,12 +4,12 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{banner}}"  wx:key="id" wx:for-item="item">
       <swiper-item>
-          <image src="{{item.img_url}}" class="slide-image" mode='widthFix'/>
+          <image src="{{item.img_url}}" class="slide-image" mode='widthFix' bindtap='banner'/>
       </swiper-item>
     </block>
 </swiper>
 
-<view class='type'>
+<view class='type' wx:if='{{visable}}'>
   <view class='.type-item' wx:for='{{types}}' wx:key='id' wx:for-item="item">
     <text class='{{currentData == index ? "type-selected" : "type-normal"}}'  data-current = "{{index}}" bindtap='checkCurrent'>{{item.typename}}</text>
   </view>
@@ -18,17 +18,22 @@
   <view class='gif-item' wx:for='{{giflist}}' wx:key='id' wx:for-item="item" bindtap='createDetail' data-index='{{index}}'>
       <image class='gif-img' src='{{item.template_img_url}}' mode='aspectFill'></image>
       <text class='gif-title'>{{item.template_title}}</text>
-      <view class='gif-title-bg'></view>
   </view>
 </view>
-<view class='load_more'>
+
+<view class='version-content'>
+  <text class='gif-style'>个性GIF制作</text>
+  <text class='gif-version' bindtap='version'>免责申明</text>
+</view>
+
+<!-- <view class='load_more'>
   <image wx:if="{{is_load_more}}" src='../images/load_more.gif' class='load_more_image'></image>
   <text class='is_end' wx:if="{{is_end}}">更多内容小编正在努力更新</text>
   <!-- <view class='more-version' bindtap='version'>
     <text class='is-version' wx:if="{{is_end}}">免责声明</text>
     <image class='version-img' wx:if="{{is_version_show}}" src='../images/version_icon.png'></image>
-  </view> -->
-</view>
+  </view> 
+</view> -->
 </view>
 <view wx:if="{{is_nodata}}" class='no-data' bindtap='onrefresh'>
   <image src='../images/no_data.png'></image>

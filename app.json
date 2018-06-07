@@ -3,15 +3,14 @@
     "pages/home/home",
     "pages/gifmake/gifmake",
     "pages/gifresult/gifresult",
-    "pages/gifshow/gifshow",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffe20d",
+    "navigationBarBackgroundColor": "#FFB90F",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle":"white",
     "backgroundColor": "#fff",
     "onReachBottomDistance": "20rpx"
   }

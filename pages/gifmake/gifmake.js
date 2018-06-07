@@ -8,8 +8,8 @@ var ctitle
 var tname
 var tcontent
 var maxinput
-var base_url = "http://127.0.0.1:8888/"
-
+var base_url = "https://www.antleague.com/"
+var pre_img_url
 Page({
   /**
    * 页面的初始数据
@@ -37,8 +37,9 @@ Page({
     console.log(talklist)
 
     oldList = [].concat(talklist);
+    pre_img_url = base_url + tname + "/gif_pre.gif"
     this.setData({
-      gifImgUrl: base_url + tname + "/example.png",
+      gifImgUrl: pre_img_url,
       senslist: talklist,
       maxlength: maxinput
     })
@@ -54,6 +55,11 @@ Page({
     }else{
       talklist[i] = oldinput;
     }
+  },
+  tohome:function(){
+    wx.navigateTo({
+      url: '/pages/home/home',
+    })
   },
   //一键生成(默认带水印)
   watermark:function(){
@@ -125,8 +131,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: 'gif在线制作',
-      path: '/pages/home/home'
+      title: '快来制作你的专属GIF表情吧',
+      path: '/pages/home/home',
+      imageUrl:pre_img_url
     }
   }
 
